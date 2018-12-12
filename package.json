@@ -1,0 +1,42 @@
+{
+  "name": "monkeygui",
+  "version": "1.0.0",
+  "description": "A monkey gui application",
+  "main": "main.js",
+  "build": {
+    "appId": "com.monkeygui.app",
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "zip"
+      ]
+    }
+  },
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --x64",
+    "pack": "electron-packager . monkeyGUI --all --out ./打包monkeyGUI --app-version=1.0.0 --electron-version=3.0.7 --overwrite --icon=other/image/logo.ico"
+  },
+  "repository": "",
+  "keywords": [
+    "Electron",
+    "monkey",
+    "gui",
+    "adb",
+    "shell"
+  ],
+  "author": "liyinchi",
+  "license": "CC0-1.0",
+  "dependencies": {
+    "electron": "^3.0.10",
+    "fs": "0.0.1-security",
+    "jquery": "^3.3.1",
+    "node-cmd": "^3.0.0"
+  }
+}

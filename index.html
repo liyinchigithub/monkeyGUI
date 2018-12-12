@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <title>Excel转XML工具</title> -->
+  <title>MonkeyGUI工具
+  </title>
+<!-- 引入组件库 -->
+  <script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+  <script src="other/jquery-pretty-radio-checkbox/js/jquery-1.8.3.min.js"></script>
+  <script src="other/jquery-pretty-radio-checkbox/js/jquery-labelauty.js"></script>
+<!-- 引入组件库 -->
+<link href="other/css/css1.css" rel="stylesheet" type="text/css" />
+<!-- 引入样式 -->
+  <link href="other/css/buttons.css" rel="stylesheet" type="text/css" />
+<!-- 引入样式 -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入样式 -->
+  <link href="other/jquery-pretty-radio-checkbox/css/jquery-labelauty.css" rel="stylesheet" type="text/css">
+  <style>
+    ul { list-style-type: none;}
+    li { display: inline-block;}
+    li { margin: 10px 0;}
+    input.labelauty + label { font: 12px "Microsoft Yahei";}
+  </style>
+  <style>
+        #header {
+            background-color:black;
+            color:white;
+            text-align:center;
+            padding:5px;
+        }
+        #nav {
+            line-height:30px;
+            background-color:#eeeeee;
+            height:2100px;
+            width:50px;
+            float:left;
+            padding:5px; 
+        }
+        #section {
+            width:650px;
+            float:left;
+            padding:10px; 
+        }
+        #footer {
+            background-color:black;
+            color:white;
+            clear:both;
+            text-align:center;
+            padding:5px; 
+        }
+        </style>
+
+</head>
+
+<body >
+
+                <div id="header">
+                        <h1>
+                        <span>Monkey</span>GUI<span>工具V1.0</span>
+                        </h1>
+                </div>
+                <div id="nav">
+                    高效<br>
+                    进取<br>
+                    正直<br>
+                    专业<br>
+                </div>
+                
+                <div id="section">
+                        <div id="footer">
+                            神州优车厦门应用一组测试技术组制作 liyinchi@qq.com  QQ群:206548938
+                                </div>
+                        <div id="attention">【注意事项】<p>
+                                （1）选择USB连接方式为设备文件管理；<p>
+                                （2）设置->开启开发者选项->勾选‘USB调试’（真机和模拟器上皆需进行）<p>
+                        </div>
+                        <hr>
+                        <h3 align="center">【运行环境】</h3>
+                        <ul align="center" class="dowebok">
+                            <li><input id="radio1" type="radio" name="platform" value="Windows" checked data-labelauty="Windows"></li>
+                            <li><input id="radio2" type="radio" name="platform" value="Mac" data-labelauty="MacBook"></li>
+                        </ul>
+                        <hr>
+                    
+                        <div align="left">
+                         
+                                <table border="0" width="600" height="300">
+                                        <tr>
+                                            <td width="18%">
+                                                    <h3>【获取应用包名】</h3>
+                                                    <textarea id="getPackageName_textarea" placeholder="获取包名信息显示"></textarea> 
+                                                    <button id="getPackageName"  class="button button-3d button-action button-pill"><b>获取当前界面应用的包名</b></button>
+                                                    <h3>【指定应用包名】</h3><p>
+                                                    <textarea id="package_name" placeholder="包名粘贴此处，例如：com.mt.mtxx.mtxx"></textarea>
+                                            </td>
+                                            <td width="18%">
+                                                    <h3>【获取设备信息】</h3>
+                                                    <textarea id="getDeviceInfo_textarea" placeholder="获取设备号信息显示"></textarea> 
+                                                    <button id="getDevices"  class="button button-3d button-action button-pill"><b>获取当前已连接设备号信息</b></button>
+                                                    <h3>【指定设备信息】</h3><p>
+                                                    <textarea id="getDeviceInfo" placeholder="设备号粘贴此处，例如：2f1c68127cf4"></textarea>    
+                                            </td>
+                        
+                                        </tr>
+                                        </table>
+                                <hr>
+                                <h3>【基础配置】</h3>
+                                <label>事件次数：</label>
+                                <input id="event_count" value="3000"></input> <p>
+                                <label>Seed的值：</label>
+                                <input id="seed" value="1"></input> <p>
+                                <label>延迟时间：</label>
+                                <input id="delay_time" value="2000"></input> <p>
+                                <hr>
+                                <h3>【事件比例】</h3>
+                                <label>①触摸</label>
+                                <input id="touch" value="30"></input> <p>
+                                <label>②动作</label>
+                                <input id="motion" value="10"></input> <p>
+                                <label>③轨迹</label>
+                                <input id="trackball" value="10"></input> <p>
+                                <label>④基本导航</label>
+                                <input id="base_nav" value="10"></input> <p>
+                                <label>⑤主导航</label>
+                                <input id="major_nav" value="10"></input> <p>
+                                <label>⑥系统按键</label>
+                                <input id="syskeys" value="10"></input> <p>
+                                <label>⑦与其他应用交互</label>
+                                <input id="appswitch" value="10"></input> <p>
+                                <label>⑧其他类型事件</label>
+                                <input id="other_event" value="10"></input> <p>
+                                <hr>
+                                <h3>【日志保存位置】</h3>
+                                <label>输出位置：</label>
+                                <input id="save_path" value="1> c:\monkey.log 2> c:\error.log"></input> <p>
+                                <h6>例如日志保存位置Android：1> /sdcard/monkey.txt 2> /sdcard/error.txt</h6><p>
+                                <h6>例如日志保存位置Windows：1> c:\monkey.log  2> c:\error.log</h6><p>
+                                <h6>例如日志保存位置Macbook：1> /Users/liyinchi/monkey.log 2> /Users/liyinchi/error.log</h6><p>
+                                <textarea rows="10" cols="100" id="loginfo" placeholder="如果设置了日志保存位置，则此处不显示日志信息"></textarea> 
+                            </div>
+                            <hr>
+                        <h3>【运行参数】</h3>
+                        <ul class="dowebok">
+                            <li><input type="checkbox" name="checkbox" value=“--ignore-crashes” checked data-labelauty="当出现Crash继续"></li>
+                            <li><input type="checkbox" name="checkbox" value=“--ignore-timeouts“ checked data-labelauty="当出现ANR继续"></li>
+                            <li><input type="checkbox" name="checkbox" value=“--ignore-security-exceptions” checked data-labelauty="当出现许可错误继续"></li>
+                            <li><input type="checkbox" name="checkbox" value=“--ignore-timeouts” checked data-labelauty="当出现任何逾时错误继续"></li>
+                        </ul>
+                        <hr>
+                </div>
+                <div>
+                        <center>
+                                <button id="start" class="button button-3d button-action button-pill"><b>开始</b></i></button>
+                                <span><span><span></span>
+                                <button id="stop" class="button button-3d button-action button-pill"><b>中止</b></i></button>
+                        </center><p>
+                        <hr>
+                        <h3>【导出ANR traces.txt】</h3>
+                        <div id="tips">Tips:当ANR发生时除过logcat可以看见的log以外，我们还可以在系统指定目录下找到traces文件进行分析，获取ANR trace文件<div><p>
+                        <label>导出位置:</label>
+                        <input id="pull_traces_path" value="c:\"></input>
+                        <button id="pull_traces" class="button button-3d button-action button-pill"><b>导出</b></i></button><p>
+                        <hr>
+                        <h3>【保存界面所有参数】</h3>
+                        <center>
+                                <button id="save_parameter" class="button button-3d button-action button-pill"><b>保存当前界面参数配置</b></i></button>
+                                <button id="restore_parameter" class="button button-3d button-action button-pill"><b>恢复上一次保存参数配置</b></i></button>
+                        </center>
+                        <hr>
+                </div>
+                <div id="footer">
+                    Copyright 神州优车厦门应用一组测试技术组制作 liyinchi@qq.com  QQ群:206548938
+                </div>
+  
+                <!---底部分-->
+            
+
+   
+   <script>
+   $(function(){
+       $(':input').labelauty();
+   });
+
+   //读写other/parameter_save.json
+   var fs =require('fs');
+   //保存参数按钮事件处理
+    $('#save_parameter').click(function(){
+        //定义一个对象，因为写入parameter_save.json内容是对象格式
+        var obj={};
+        //将界面的参数添加到parameter_save.json中
+        obj['getPackageName_textarea']=$('#getPackageName_textarea').val();
+        obj['package_name']=$('#package_name').val();
+        obj['getDeviceInfo_textarea']=$('#getDeviceInfo_textarea').val();
+        obj['getDeviceInfo']=$('#getDeviceInfo').val();
+        obj['event_count']=$('#event_count').val();
+        obj['seed']=$('#seed').val();
+        obj['delay_time']=$('#delay_time').val();
+        obj['touch']=$('#touch').val();
+        obj['motion']=$('#motion').val();
+        obj['trackball']=$('#trackball').val();
+        obj['base_nav']=$('#base_nav').val();
+        obj['major_nav']=$('#major_nav').val();
+        obj['syskeys']=$('#syskeys').val();
+        obj['appswitch']=$('#appswitch').val();
+        obj['other_event']=$('#other_event').val();
+        obj['loginfo']=$('#loginfo').val();
+        fs.writeFile(__dirname+"/other/parameter_save.json",JSON.stringify(obj),{flag:"w"},function (err) {
+                if(err){
+                    return console.log(err);
+                }else {
+                    alert("保存成功");
+                }
+        })
+            })
+    //恢复参数按钮处理
+    $('#restore_parameter').click(function(){
+        //读取文件内容
+        fs.readFile(__dirname+"/other/parameter_save.json",function (err,data) {
+                if(err){
+                        return console.log(err);
+                }else {
+                        //将内容转成对象
+                        var obj =JSON.parse(data);
+                        //将对象的属性值写入界面控件中的value
+                    $('#getPackageName_textarea').val(obj['getPackageName_textarea']);
+                    $('#package_name').val(obj['package_name']);
+                    $('#getDeviceInfo_textarea').val(obj['getDeviceInfo_textarea']);
+                    $('#getDeviceInfo').val(obj['getDeviceInfo']);
+                    $('#event_count').val(obj['event_count']);
+                    $('#seed').val(obj['seed']);
+                    $('#delay_time').val(obj['delay_time']);
+                    $('#touch').val(obj['touch']);
+                    $('#motion').val(obj['motion']);
+                    $('#trackball').val(obj['trackball']);
+                    $('#base_nav').val(obj['base_nav']);
+                    $('#major_nav').val(obj['major_nav']);
+                    $('#syskeys').val(obj['syskeys']);
+                    $('#appswitch').val(obj['appswitch']);
+                    $('#other_event').val(obj['other_event']);
+                    $('#loginfo').val(obj['loginfo']);
+                    alert("恢复成功");
+                }
+                                                                  })
+            })
+
+       //执行adb monkey命令
+       var cmd=require('node-cmd');
+        //当点击执行按钮时，执行
+        $("#start").click(function(){
+            //获取单选按钮组合，当前被选中的单选按钮的值
+            var platform_name = $('input[name="platform"]:checked').val(); 
+            //判断是哪个平台
+            if (platform_name==="Windows") {
+                //Windows
+                console.log("您当前选中的平台是："+platform_name);
+                                var text='';
+                                //判断设备是否连接
+                                cmd.get('adb devices',
+                                            function(err, data, stderr){
+                                                if(err){
+                                                    alert(err);
+                                                    console.log(err);}
+                                                console.log('the current dir contains these files :\n\n',data.split(" List of devices attached"))
+                                                //检查设备是否连接
+                                                // if ((data.indexOf("device")!=-1)) {
+                                                    console.log("adb devices返回的内容："+data);
+                                                    // console.log("设备已连接");
+                                                    $.each($('input:checkbox:checked'),function(){
+                                                        //调试输出 弹窗
+                                                        //window.alert("你选了："+$('input[type=checkbox]:checked').length+"个，其中有："+$(this).val());
+                                                        text=text+$(this).val()+' ';
+                                                    });
+                                                    console.log("text"+text);
+
+                                                    //执行monkey命令
+                                                    //$('input:checkbox:checked') 等同于 $('input[type=checkbox]:checked')
+                                                    //意思是选择被选中的checkbox
+                                                    //input1 设备名 input2 次数 input包名
+                                                cmd.get('adb -s '+$('#getDeviceInfo').val()+' shell monkey'+' -p '+$('#package_name').val()+' -v -v -v '+$('#event_count').val()+" --throttle "+$('#delay_time').val()+" -s "+$('#seed').val()+" --pct-touch "+$('#touch').val()+" --pct-motion "+$('#motion').val()+" --pct-trackball "+$('#trackball').val()+" --pct-nav "+$('#base_nav').val()+" --pct-majornav "+$('#major_nav').val()+" --pct-syskeys "+$('#syskeys').val()+" --pct-appswitch "+$('#appswitch').val()+" --pct-anyevent "+$('#other_event').val()+' '+text+' '+$('#save_path').val(),
+                                                        //'adb -s '+$('#input1').val()+' shell monkey -v 100 1> /Users/liyinchi/monkey.log  2> /Users/liyinchi/error.log', 
+                                                        function(err, data, stderr){
+                                                            if(err){
+                                                                alert(err);
+                                                                console.log(err);}
+                                                                console.log('the current dir contains these files :\n\n',data);
+                                                                //显示日志内容
+                                                                $("#loginfo").val(data);
+                                                            }
+                                                        );
+                                                        alert('adb -s '+$('#getDeviceInfo').val()+' shell monkey '+' -p '+$('#package_name').val()+' -v -v -v '+$('#event_count').val()+" --throttle "+$('#delay_time').val()+" -s "+$('#seed').val()+" --pct-touch "+$('#touch').val()+" --pct-motion "+$('#motion').val()+" --pct-trackball "+$('#trackball').val()+" --pct-nav "+$('#base_nav').val()+" --pct-majornav "+$('#major_nav').val()+" --pct-syskeys "+$('#syskeys').val()+" --pct-appswitch "+$('#appswitch').val()+" --pct-anyevent "+$('#other_event').val()+' '+text+' '+$('#save_path').val());
+                                                        
+                                            }
+                                        );
+
+            } else {
+                 //Mac
+                console.log("您当前选中的平台是："+platform_name);
+            }
+        });  
+
+
+
+            //一键获取当前连接的设备信息
+               $("#getDevices").click(function(){
+            //获取当前设备
+            cmd.get(
+                'adb devices',
+                function(err, stdout, stderr){
+                    if(err){
+                        alert(err);
+                        console.log(err);}
+                    console.log('adb devices :\n\n',stdout);
+                    //判断当前是否有设备
+                    // if (data.match(RegExp(/device/))){
+                        $("#getDeviceInfo_textarea").val(stdout)
+                    // } else {
+                    //     alert("当前没有设备连接你的电脑");
+                    // }
+                }
+            );
+        });
+        //杀掉进程，即重启手机，对象为当前指定的设备名名称
+        $("#stop").click(function(){
+                cmd.run('adb -s '+$('#getDeviceInfo').val()+' shell reboot');
+                console.log('重启:'+'adb -s'+$('#getDeviceInfo').val()+' shell reboot');
+                })
+      //导出traces.txt
+      $("#pull_traces").click(function(){
+                cmd.run('adb pull /data/anr/traces.txt '+$('#pull_traces_path').val());
+                console.log('traces:'+'adb pull /data/anr/traces.txt '+$('#pull_traces_path').val());
+                })
+
+        //获取当前设备已启动的包名
+        $("#getPackageName").click(function(){
+                    if ($('input:radio[name="platform"]:checked').val()==="Windows") {
+                        cmd.get('adb shell dumpsys window | findstr mCurrentFocu',function(err, data, stderr){
+                            if(err){
+                                alert(err);
+                                console.log(err);}
+                        console.log('获取当前包名'+data);
+                        $("#getPackageName_textarea").val(data);
+                                });
+                    } else {
+                        cmd.get('adb shell dumpsys window | grep mCurrentFocu',function(err, data, stderr){
+                            if(err){
+                                alert(err);
+                                console.log(err);}
+                        console.log('获取当前包名'+data);
+                        $("#getPackageName_textarea").val(data);
+                                });
+                    }
+                    
+                    })
+
+    
+    </script>
+
+</body>
+
+</html>

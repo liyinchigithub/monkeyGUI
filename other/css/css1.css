@@ -1,0 +1,261 @@
+
+body {
+    padding: 0px;
+    margin: 0px;
+    /*background-color: #CEA;*/
+    background-color: #F6F6F6;
+    font-family: 'Roboto', sans-serif;
+}
+a {
+    color: #29C;
+}
+#content {
+    margin: auto;
+    max-width: 800px;
+    position: relative;
+    background-color: #FFF;
+    padding: 1em 2em;
+    /*box-shadow: 0px 0px 0.5em rgba(0,0,0,0.5);*/
+    border-right: 1px solid #E9E9E9;
+    border-left: 1px solid #E9E9E9;
+}
+#demo {
+    margin-top: 3em;
+}
+#getDeviceInfo,#package_name,#getDeviceInfo_textarea{
+    box-sizing: border-box;
+    background-color: #FFF;
+    border-radius:5px;
+    border: none;
+    color: #29C;
+    font-size: 1.0em;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    display:block;
+    width: 500;
+    padding-top: 1.5em;
+    max-width: 500%;
+    min-height: 50px;
+    box-shadow: inset 0px 0px 3px #EEE;
+}
+
+#getPackageName_textarea,#getDeviceInfo_textarea{
+    box-sizing: border-box;
+    background-color: #FFF;
+    border-radius:5px;
+    border: none;
+    color: #29C;
+    font-size: 1.0em;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    display:block;
+    width: 500;
+    padding-top: 1.5em;
+    max-width: 500%;
+    min-height: 150px;
+    box-shadow: inset 0px 0px 3px #EEE;
+}
+
+#getDeviceInfo:focus {
+    box-shadow: inset 0px 0px 3px #DDD;
+}
+#result {
+    border: 1px solid #EEE;
+    color: #666;
+    /*background-color: #29C;*/
+    box-sizing: border-box;
+    /*color: #29C;*/
+    font-size: 1.5em;
+    /*background-color:#EFA;*/
+    padding: 1em;
+    padding-top: 1.5em;
+    display:block;
+    width:100%;
+    border-radius: 0px;
+    min-height: 150px;
+    position: relative;
+}
+#result:before {
+    color:#F5c;
+    color:#3a0;
+    content: "XPATH";
+    font-size:14px;
+    position:absolute;
+    top:0.5em;
+    left:0.5em;
+    /*width:0px;*/
+    overflow:visible;
+}
+
+.css-label {
+    color: #3a0;
+    font-size: 14px;
+    position: absolute;
+    font-family: monospace;
+    padding-top: 0.4rem;
+    padding-left: 0.4rem;
+}
+.right {
+    float: right;
+}
+.features-section {
+    margin-top: 3em;
+}
+
+h1 {
+    font-size: 2.5em;
+    color:#3a0;
+}
+h4 {
+    font-size: 1.0em;
+    color:rgba(6, 7, 6, 0.918);
+    float: left;
+}
+h1 span {
+    color: #29C;
+    font-size: 0.9em;
+}
+h2 {
+    margin-top: 3em;
+}
+code {
+    color: rgb(202, 19, 19);
+    background-color: #FEFEFE;
+    padding: 0.5em;
+    /*border-radius: 3px;*/
+    line-height: 1;
+    margin: 0px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    /*min-width: 250px;*/
+
+}
+
+code:hover {
+    background-color: #FFF;
+}
+
+code.css {
+    color: #3a0;
+    display: inline-block;
+    position: relative;
+    width: 50%;
+    /* float: left; */
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+code.xpath {
+    color: #29C;
+    display: inline-block;
+    position: relative;
+    width: 50%;
+    /*float: left;*/
+    margin-bottom: 0.25em;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+
+@media screen and (max-width: 750px) {
+    code.xpath, code.css {
+        width: 100%;
+    }
+    code.xpath {
+        display: none;
+    }
+}
+
+.example {
+    width: 100%;
+    padding-left: 200px;
+    box-sizing: border-box;
+    overflow: auto;
+    position: relative;
+    margin-bottom: 1em;
+    padding-top: 1em;
+    border-top: 1px solid #EEE;
+}
+
+.example .name {
+    color: #333;
+    font-size: 0.8rem;
+    display: block;
+    font-style: italic;
+    /*text-transform: uppercase;*/
+    position: relative;
+    /*font-weight: 300;*/
+    margin-left: -200px;
+    float: left;
+    width: 200px;
+    /*text-align: right;*/
+}
+
+.example .code {
+    line-height: 1;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.example .name code {
+    color: #000;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 1rem;
+    margin: 0px;
+    line-height: 0px;
+    /*display: inline-block;*/
+    display: block;
+    padding: 1em 0.5em;
+    /*float: left;*/
+    margin-right: 0.5em;
+    padding-left: 0px;
+    background-color: transparent;
+}
+
+
+@media screen and (max-width: 450px) {
+    #content {
+        padding: 0.5em 1em;
+    }
+    .example {
+        padding-left: 0px;
+    }
+    .example .name {
+        margin-left: 0px;
+        float: none;
+        width: 100%;
+        margin-bottom: 1em;
+        text-align: right;
+        padding-left: 0.5em;
+        padding-right: 1em;
+        box-sizing: border-box;
+        color: #666;
+    }
+    .example .name code {
+        /* float: left; */
+        padding-top: 0.5em;
+    }
+}
+
+#main{ 
+    width:800px; 
+    padding:10px; 
+    overflow:hidden
+}
+/***/
+
+/* #main{ 
+    float:left;
+    width:40%;
+    border:1px solid rgb(255, 255, 255)
+}  */
+
+#attention,#tips{
+    font-size: 13px;
+    color: brown
+}
