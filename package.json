@@ -1,6 +1,6 @@
 {
   "name": "monkeygui",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A monkey gui application",
   "main": "main.js",
   "build": {
@@ -9,21 +9,35 @@
       "target": [
         "dmg",
         "zip"
-      ]
+      ],
+      "icon": "./other/image/logo_mac.icns"
     },
     "win": {
       "target": [
         "nsis",
         "zip"
-      ]
+      ],
+      "icon": "./other/image/logo_win.ico"
+    },
+    "linux": {
+      "target": [
+        "tar.xz",
+        "zip"
+      ],
+      "icon": "./other/image/logo_linux.icns"
     }
   },
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder --win --x64",
-    "pack": "electron-packager . monkeyGUI --all --out ./打包monkeyGUI --app-version=1.0.0 --electron-version=3.0.7 --overwrite --icon=other/image/logo.ico"
+    "dist:mac": "electron-builder --mac",
+    "dist:win": "electron-builder --win --x64",
+    "dist:linux":"electron-builder --linux",
+    "pack": "electron-packager . monkeyGUI --all --out ./打包monkeyGUI --app-version=2.0.0 --electron-version=3.0.10 --overwrite --icon=other/image/logo.ico"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/"
+  },
   "keywords": [
     "Electron",
     "monkey",
@@ -33,7 +47,7 @@
   ],
   "author": "liyinchi",
   "license": "CC0-1.0",
-  "dependencies": {
+  "devDependencies": {
     "electron": "^3.0.10",
     "fs": "0.0.1-security",
     "jquery": "^3.3.1",

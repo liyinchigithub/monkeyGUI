@@ -3,19 +3,60 @@
 安装依赖
 npm install
 
-运行程序
+调试运行程序
 npm start 或npm run start
 
 打包
+
+#electron-packager
+```
 npm run pack
+```
+
+```
+  "scripts": {
+    "pack": "electron-packager . monkeyGUI --all --out ./打包monkeyGUI --app-version=2.0.0 --electron-version=3.0.10 --overwrite --icon=./other/image/logo.ico"
+  }
+```
 
 package.json设置==》scripts==》pack
-electron-packager . monkeyGUI --all --out ./打包monkeyGUI --app-version=1.0.0 --electron-version=3.0.7
+electron-packager . monkeyGUI --all --out ./打包monkeyGUI --app-version=2.0.0 --electron-version=3.0.10
+
+
+参数说明：
 
 --all表示打包所有平台的包（含linux、windows、mac）
 
-![](http://thyrsi.com/t6/659/1547805886x2728278638.jpg)
+--out打包后输出路径
 
-![](http://thyrsi.com/t6/659/1547805937x2728278638.jpg)
+--app-version当前应用的版本号
 
-![](http://thyrsi.com/t6/659/1547805973x2728278638.jpg)
+--electron-version打包环境的electron版本号
+
+#electron-builder
+
+```
+npm run dist:mac
+```
+
+```
+npm run dist:win
+```
+
+package.json设置==》scripts==》dist:mac、dist:win
+
+```
+  "scripts": {
+    "start": "electron .",
+    "dist:mac": "electron-builder --mac",
+    "dist:win": "electron-builder --win --x64",
+    "dist:linux":"electron-builder --linux",
+     "pack": "electron-packager . monkeyGUI --all --out ./打包monkeyGUI --app-version=2.0.0 --electron-version=3.0.10 --overwrite --icon=./other/image/logo.ico"
+  }
+```
+
+![](http://thyrsi.com/t6/660/1548049748x2728278638.jpg)
+
+![](http://thyrsi.com/t6/660/1548049777x2728278638.jpg)
+
+![](http://thyrsi.com/t6/660/1548049804x2728278638.jpg)

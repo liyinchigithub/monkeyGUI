@@ -2,7 +2,6 @@
 const {app, BrowserWindow} = require('electron');
 const url=require('url');
 var path = require('path');
-var cmd=require('node-cmd');
 //保存窗口对象的全局引用，如果不保存，窗口将保存
 // JavaScript对象被垃圾回收时自动关闭。
 let mainWindow
@@ -11,7 +10,7 @@ function createWindow () {
   // 实例化一个窗口对象
   mainWindow = new BrowserWindow({width: 800, height: 800})
 
-  // 应用加载指定页面
+  // 应用加载指定页面index.html这个画布
   mainWindow.loadFile(`${__dirname}/index.html`);
 //   mainWindow.loadURL(url.format({
 //     pathname: path.join(__dirname, '/index.html'),
@@ -20,10 +19,10 @@ function createWindow () {
 // }));
 
   // 设置窗口标题
-  mainWindow.setTitle("monkeyGUI");
+  mainWindow.setTitle("monkeyGUI2.0");
   
   // 打开开发工具（渲染进程）
-  //mainWindow.webContents.openDevTools()
+//mainWindow.webContents.openDevTools()
 
   // 当窗口关闭时触发
   mainWindow.on('closed', function () {
