@@ -1,14 +1,29 @@
 # monkeyGUI
 
+![img](https://liyinchigithub.github.io/images/Monkey_GUI/WechatIMG1.jpg)
+ 
+![img](https://liyinchigithub.github.io/images/Monkey_GUI/WechatIMG2.jpg)
+  
+![img](https://liyinchigithub.github.io/images/Monkey_GUI/WechatIMG3.jpg)
+
+![img](https://liyinchigithub.github.io/images/Monkey_GUI/WechatIMG4.jpg)
+      
 安装依赖
+
+```
 npm install
+```
 
 调试运行程序
+
+```
 npm start 或npm run start
+```
 
 打包
 
 #electron-packager
+
 ```
 npm run pack
 ```
@@ -55,8 +70,6 @@ package.json设置==》scripts==》dist:mac、dist:win
   }
 ```
 
-![](http://thyrsi.com/t6/660/1548049748x2728278638.jpg)
 
-![](http://thyrsi.com/t6/660/1548049777x2728278638.jpg)
 
-![](http://thyrsi.com/t6/660/1548049804x2728278638.jpg)
+
