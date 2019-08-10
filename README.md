@@ -1,4 +1,8 @@
-# monkeyGUI
+monkeyGUI
+===
+
+安装包下载地址：https://github.com/liyinchigithub/monkeyGUI/releases
+
 
 ![img](https://liyinchigithub.github.io/images/Monkey_GUI/WechatIMG1.jpg)
  
@@ -8,6 +12,9 @@
 
 ![img](https://liyinchigithub.github.io/images/Monkey_GUI/WechatIMG4.jpg)
       
+源码
+===
+
 安装依赖
 
 ```
