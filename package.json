@@ -50,7 +50,7 @@
   "devDependencies": {
     "electron": "^3.0.10",
     "fs": "0.0.1-security",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "node-cmd": "^3.0.0"
   }
 }
