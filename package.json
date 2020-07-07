@@ -48,7 +48,7 @@
   "author": "liyinchi",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^3.0.10",
+    "electron": "^7.2.4",
     "fs": "0.0.1-security",
     "jquery": "^3.3.1",
     "node-cmd": "^3.0.0"
