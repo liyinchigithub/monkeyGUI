@@ -1,6 +1,8 @@
 monkeyGUI
 ===
 
+[![nodejs](https://img.shields.io/badge/nodejs-v8.11.4-blue.svg)](https://nodejs.org/en/blog/release/v8.11.4/) [![electron](https://img.shields.io/badge/electron-v3.0.10-brightgreen.svg)](https://www.electronjs.org/)
+
 安装包下载地址：https://github.com/liyinchigithub/monkeyGUI/releases
 
 
